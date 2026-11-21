@@ -383,6 +383,7 @@ main td a:hover {
   }
 }
 
+/* ---------- 2 komponentas: poraštė (footer) ---------- */
 
 .footer {
   padding: 70px 0 45px;
@@ -395,4 +396,198 @@ main td a:hover {
   margin-top: 28px;
   padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== 8 LD sąrašų stiliai ===== */
+
+/* ---------- Nenumeruotas sąrašas (pseudo-elementai) ---------- */
+.tech-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-list > li {
+  position: relative;
+  margin-bottom: 12px;
+  padding: 10px 16px 10px 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+/* Standartinį tašką pakeičia pasuktas rombas */
+.tech-list > li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 17px;
+  width: 10px;
+  height: 10px;
+  background: #ff9f43;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+/* ---------- Įdėtinis sąrašas: kitoks nei pagrindinis ---------- */
+.tech-list ul {
+  list-style: none;
+  margin: 10px 0 4px 4px;
+  padding: 0 0 0 16px;
+  border-left: 2px dashed rgba(142, 202, 230, 0.5);
+}
+
+.tech-list ul li {
+  position: relative;
+  margin-bottom: 4px;
+  padding: 3px 0 3px 22px;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: #8ecae6;
+}
+
+/* Tuščias apskritimas vietoj rombo */
+.tech-list ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #8ecae6;
+  border-radius: 50%;
+}
+
+/* ---------- Numeruotas sąrašas (skaitikliai) ---------- */
+.steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: etapas;
+}
+
+.steps-list > li {
+  position: relative;
+  counter-increment: etapas;
+  margin-bottom: 20px;
+  padding: 4px 0 4px 54px;
+  min-height: 36px;
+}
+
+/* Skaičius apskritime */
+.steps-list > li::before {
+  content: counter(etapas);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #ff7a59, #ff9f43);
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(255, 122, 89, 0.35);
+}
+
+/* Linija, jungianti etapus */
+.steps-list > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 40px;
+  bottom: -18px;
+  width: 2px;
+  background: rgba(255, 209, 102, 0.35);
+}
+
+/* ===== 8 LD lentelės stilius ===== */
+
+.price-table {
+  --bs-table-bg: transparent;
+  --bs-table-color: #d0d4d9;
+  --bs-table-border-color: rgba(255, 255, 255, 0.12);
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(255, 209, 102, 0.12);
+}
+
+/* c) Vienodi langelių tarpai ir turinio lygiavimas centre */
+.price-table > thead > tr > th,
+.price-table > tbody > tr > td {
+  padding: 16px 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* a) Antraštinė eilutė: išsiskiria gradientu, storu šriftu, didžiosiomis raidėmis */
+.price-table > thead > tr > th {
+  background: linear-gradient(135deg, #ff7a59, #ff9f43);
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 3px solid #ffd166;
+}
+
+/* b) "Zebra" stilius: pakaitomis skirtingos eilučių spalvos */
+.price-table > tbody > tr:nth-child(odd) > td {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.price-table > tbody > tr:nth-child(even) > td {
+  background-color: rgba(255, 209, 102, 0.08);
+}
+
+/* b) Eilutės :hover efektas */
+.price-table > tbody > tr > td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.price-table > tbody > tr:hover > td {
+  background-color: rgba(255, 159, 67, 0.25);
+  color: #ffffff;
+}
+
+/* Kainos stulpelis paryškintas */
+.price-table > tbody > tr > td:last-child {
+  font-weight: 600;
+  color: #ffd166;
+}
+
+/* Užapvalinti lentelės kampai */
+.price-table > thead > tr > th:first-child {
+  border-top-left-radius: 13px;
+}
+
+.price-table > thead > tr > th:last-child {
+  border-top-right-radius: 13px;
+}
+
+.price-table > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+.price-table > tbody > tr:last-child > td:first-child {
+  border-bottom-left-radius: 13px;
+}
+
+.price-table > tbody > tr:last-child > td:last-child {
+  border-bottom-right-radius: 13px;
+}
+
+/* Lentelės paantraštė */
+.price-table caption {
+  padding-top: 12px;
+  color: #adb5bd;
+  font-size: 0.9rem;
+  text-align: center;
 }
