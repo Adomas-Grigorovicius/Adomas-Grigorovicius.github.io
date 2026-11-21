@@ -1,1 +1,87 @@
-/* Mano CV - papildomi stiliai */
+/* Mano CV - papildomi stiliai (nuskaitomi po main.css) */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700;800&display=swap");
+
+:root {
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-font: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.header .logo h1,
+.page-title .heading h1,
+.resume .resume-title,
+.resume .resume-item h4,
+.services .service-item h3,
+.portfolio .portfolio-info h4 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  line-height: 1.25;
+}
+
+h1,
+.page-title .heading h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffd166;
+  letter-spacing: 0.5px;
+}
+
+h3,
+.resume .resume-title,
+.services .service-item h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #8ecae6;
+}
+
+h4,
+.resume .resume-item h4,
+.portfolio .portfolio-info h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+}
+
+h5 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #ced4da;
+}
+
+h6 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #adb5bd;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.header .logo h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0;
+}
+
+
+p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: 0.2px;
+  color: #d0d4d9;
+  margin-bottom: 1.1rem;
+}
