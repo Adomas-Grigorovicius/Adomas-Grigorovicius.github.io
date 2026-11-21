@@ -1,7 +1,10 @@
 /* Mano CV - papildomi stiliai (nuskaitomi po main.css) */
 
+/* ===== Šriftai (Google Fonts, palaiko lietuviškas raides) ===== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700;800&display=swap");
 
+/* ===== Šriftų šeimos =====
+   Šablonas naudoja kintamuosius, todėl pakeičiame juos vienoje vietoje. */
 :root {
   --default-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --heading-font: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -11,7 +14,7 @@ body {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-
+/* ===== Antraštės ===== */
 h1, h2, h3, h4, h5, h6,
 .header .logo h1,
 .page-title .heading h1,
@@ -70,13 +73,13 @@ h6 {
   letter-spacing: 2px;
 }
 
-
+/* Logotipas lieka mažesnis, kad tilptų antraštėje */
 .header .logo h1 {
   font-size: 1.8rem;
   letter-spacing: 0;
 }
 
-
+/* ===== Pastraipos ===== */
 p {
   font-size: 1.05rem;
   font-weight: 300;
@@ -84,4 +87,258 @@ p {
   letter-spacing: 0.2px;
   color: #d0d4d9;
   margin-bottom: 1.1rem;
+}
+
+/* ===== Nuorodos ===== */
+a {
+  color: #ff9f43;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: #ffd166;
+}
+
+a:active {
+  color: #ff7a59;
+}
+
+/* Nuorodos tekste: animuotas pabraukimas užvedus pelę */
+main p a,
+main li a,
+main td a {
+  background-image: linear-gradient(#ffd166, #ffd166);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  padding-bottom: 2px;
+  transition: background-size 0.3s ease, color 0.25s ease;
+}
+
+main p a:hover,
+main li a:hover,
+main td a:hover {
+  background-size: 100% 2px;
+}
+
+/* Naršymo trupinėliai (breadcrumbs) */
+.page-title .breadcrumbs ol li a {
+  color: #ff9f43;
+  font-weight: 600;
+}
+
+.page-title .breadcrumbs ol li a:hover {
+  color: #ffd166;
+  text-decoration: underline;
+}
+
+/* Poraštės nuorodos */
+.footer .credits a {
+  color: #ff9f43;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer .credits a:hover {
+  color: #ffd166;
+}
+
+/* ===== Mygtukai ===== */
+.btn-custom,
+.php-email-form button[type="submit"] {
+  display: inline-block;
+  padding: 12px 32px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #ff7a59, #ff9f43);
+  border: 2px solid transparent;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(255, 122, 89, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+              background 0.2s ease, color 0.2s ease;
+}
+
+/* Užvedus pelę: mygtukas pakyla, fonas tampa permatomas */
+.btn-custom:hover,
+.php-email-form button[type="submit"]:hover {
+  color: #ffd166;
+  background: transparent;
+  border-color: #ffd166;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 209, 102, 0.3);
+}
+
+/* Paspaudus: mygtukas "įspaudžiamas" */
+.btn-custom:active,
+.php-email-form button[type="submit"]:active {
+  color: #1a1a1a;
+  background: #ffd166;
+  border-color: #ffd166;
+  transform: translateY(1px) scale(0.97);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Matomas fokusas naršant klaviatūra */
+.btn-custom:focus-visible,
+.php-email-form button[type="submit"]:focus-visible {
+  outline: 3px solid #8ecae6;
+  outline-offset: 3px;
+}
+
+/* Mygtukas "Į viršų" */
+.scroll-top {
+  background: linear-gradient(135deg, #ff7a59, #ff9f43);
+  border-radius: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.scroll-top i {
+  color: #1a1a1a;
+}
+
+.scroll-top:hover {
+  background: #ffd166;
+  transform: translateY(-4px);
+}
+
+.scroll-top:active {
+  background: #ff7a59;
+  transform: scale(0.92);
+}
+
+/* ===== Išdėstymas: tarpai (margin / padding) ===== */
+
+/* Didesni tarpai tarp skilčių (šablone buvo mažesni) */
+.about.section,
+.resume.section,
+.portfolio.section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* ===== "Apie" skiltis ===== */
+
+/* Nuotrauka: užapvalinta, su rėmeliu ir švytėjimu */
+.about img {
+  border-radius: 20px;
+  border: 2px solid rgba(255, 209, 102, 0.35);
+  box-shadow: 0 10px 30px rgba(255, 209, 102, 0.15);
+  padding: 6px;
+  margin-bottom: 20px;
+}
+
+.about .content h2 {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 209, 102, 0.35);
+}
+
+/* Duomenų sąrašo elementai tampa mažomis kortelėmis */
+.about .content ul {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.about .content ul li {
+  margin-bottom: 14px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #ff9f43;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(255, 209, 102, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about .content ul li:hover {
+  transform: translateX(6px);
+  box-shadow: 0 6px 18px rgba(255, 209, 102, 0.2);
+}
+
+/* ===== "Patirtis" skiltis ===== */
+
+.resume .resume-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(142, 202, 230, 0.4);
+}
+
+/* Kiekvienas įrašas - kortelė */
+.resume .resume-item,
+.resume .resume-item.pb-0 {
+  margin-bottom: 28px;
+  padding: 22px 26px !important;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #ffd166;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(255, 209, 102, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resume .resume-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(255, 209, 102, 0.22);
+}
+
+/* Šablono apskritimas ant kairio krašto sulygiuojamas su kortele */
+.resume .resume-item::before {
+  top: 24px;
+}
+
+.resume .resume-item ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.resume .resume-item li {
+  margin-bottom: 6px;
+}
+
+/* ===== "Atlikti darbai" skiltis ===== */
+
+.portfolio .portfolio-filters {
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.portfolio .portfolio-filters li {
+  padding: 10px 26px;
+  border: 1px solid rgba(255, 209, 102, 0.4);
+  border-radius: 50px;
+}
+
+.portfolio .portfolio-content {
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(255, 209, 102, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio .portfolio-content:hover {
+  transform: translateY(-6px);
+  border-color: #ffd166;
+  box-shadow: 0 14px 32px rgba(255, 209, 102, 0.28);
+}
+
+/* ===== Mažesni ekranai: mažesni tarpai ===== */
+@media (max-width: 768px) {
+  .about.section,
+  .resume.section,
+  .portfolio.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .resume .resume-item,
+  .resume .resume-item.pb-0 {
+    padding: 18px 18px !important;
+  }
 }
