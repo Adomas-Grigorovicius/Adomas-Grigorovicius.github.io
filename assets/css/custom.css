@@ -342,3 +342,57 @@ main td a:hover {
     padding: 18px 18px !important;
   }
 }
+
+/* ===== 5 užduotis: komponentų stiliai ===== */
+
+/* ---------- 1 komponentas: navigacijos juosta (header) ---------- */
+
+.header,
+.scrolled .header {
+  padding: 14px 0;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 3px solid #ffd166;
+  box-shadow: 0 6px 24px rgba(255, 209, 102, 0.15);
+}
+
+/* Meniu nuorodos kompiuteryje: "piliulės" formos */
+@media (min-width: 1200px) {
+  .navmenu a {
+    padding: 9px 20px;
+    margin: 0 4px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .navmenu a:hover,
+  .navmenu a.active,
+  .navmenu li:hover > a {
+    color: #ffd166;
+    background: rgba(255, 209, 102, 0.12);
+    border-color: #ffd166;
+  }
+
+  /* Pašaliname šablono žalią pabraukimą */
+  .navmenu a::before,
+  .navmenu a:hover::before,
+  .navmenu a.active::before {
+    display: none;
+  }
+}
+
+
+.footer {
+  padding: 70px 0 45px;
+  background: linear-gradient(180deg, #0b0b0b 0%, #1c1c1c 100%);
+  border-top: 3px solid #ffd166;
+  box-shadow: 0 -10px 30px rgba(255, 209, 102, 0.1);
+}
+
+.footer .copyright {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
